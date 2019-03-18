@@ -1,5 +1,5 @@
 import React from 'react';
-import TODOListItem from '../todo-list-item/todo-list-item';
+import TODOListItem from '../todo-list-item';
 import './todo-list.css'
 
 export default function ToDoList({todoDate}){
