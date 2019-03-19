@@ -2,13 +2,13 @@ import React from 'react';
 import TODOListItem from '../todo-list-item';
 import './todo-list.css'
 
-export default function ToDoList({todoDate}){
-    const elements = todoDate.map((item)=>{
+export default function ToDoList({todoData,onDeleted}){
+    const elements = todoData.map((item)=>{
         const {id,...itemProps}=item;
         return(            
             <li key = {id} className="list-group-item">
                 {/* <TODOListItem label ={item.label} important = {item.important}/> */}
-                <TODOListItem {...itemProps}/> {/*тоже самое, что и строчка выше, передаём все свойства через Spread*/}
+                <TODOListItem {...itemProps} onDeleted = {()=>onDeleted(id)}/> {/*тоже самое, что и строчка выше, передаём все свойства через Spread*/}
             </li>
         );
     });
